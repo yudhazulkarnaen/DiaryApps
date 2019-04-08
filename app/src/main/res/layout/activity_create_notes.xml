@@ -81,8 +81,9 @@
                 android:textColor="@color/colorBlack"
                 android:layout_marginBottom="8dp"/>
 
+
             <LinearLayout
-                android:visibility="gone"
+                android:visibility="visible"
                 android:id="@+id/llCreateNotesCover"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -105,6 +106,7 @@
             </LinearLayout>
 
             <RelativeLayout
+                android:visibility="gone"
                 android:id="@+id/rlCreateNotesCover"
                 android:layout_width="match_parent"
                 android:layout_height="165dp"
