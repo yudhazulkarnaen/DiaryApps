@@ -35,11 +35,12 @@ Motion Laboratory MP Internship Task
 7. Upload your application screenshot to classroom.
 8. Wait Our Team review your apps.
 
-## Mark This Line
+## Mark This Class
+Ikutilah perintah TODO pada class berikut :
 
-1. ListNotesModel : Line 9,12,16
-2. ListNotesAdapter : Line 25,33,36,46,53,66,76,85
-3. ListNotesActivity : Line 33,36,47,51,54,63
+1. ListNotesModel 
+2. ListNotesAdapter 
+3. ListNotesActivity 
 
 ## Reference
 
