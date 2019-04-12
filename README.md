@@ -44,3 +44,5 @@ Motion Laboratory MP Internship Task
 ## Reference
 
 * [RecyclerView](https://medium.com/easyread/tutorial-android-recyclerview-dan-cardview-9a62aaa6cc0c) - Tutorial Android RecyclerView dan CardView - *by. Dimas Maulana* 
+* [Figma](https://bit.ly/2CS2gUl) - MockUp DiaryApps 
+
