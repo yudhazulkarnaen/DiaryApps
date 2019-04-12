@@ -19,6 +19,9 @@ import motion.diaryapps.create_notes.CreateNotesActivity;
 import motion.diaryapps.dao.DiaryDao;
 import motion.diaryapps.utils.Tools;
 
+/**
+ * Class ini digunakan untuk Aktivitas Detail
+ */
 public class DetailNotesActivity extends AppCompatActivity {
 
 //    constant value
@@ -44,6 +47,10 @@ public class DetailNotesActivity extends AppCompatActivity {
         setData(mData);
     }
 
+    /**
+     * Method ini digunakan untuk membuat dummy
+     * @return mengembalikan {@link DiaryDao} yang telah di isi dengan data dummy
+     */
     public DiaryDao setDummy(){
         return new DiaryDao(
                 "1",
@@ -53,6 +60,10 @@ public class DetailNotesActivity extends AppCompatActivity {
                 Tools.getCurrentDateISO8601());
     }
 
+    /**
+     * Method ini digunakan untuk memasang data ke component di layout
+     * @param mData {@link DiaryDao} - data yang akan ditampilkan
+     */
     public void setData(DiaryDao mData){
         mTvDetailNotesTitle.setText(mData.getTitle());
         mTvDetailNotesDescription.setText(mData.getDescription());
@@ -60,6 +71,9 @@ public class DetailNotesActivity extends AppCompatActivity {
         Tools.setImage(mIvDetailNotes,mData.getUrl_cover());
     }
 
+    /**
+     * Method ini digunakan untuk membuat toolbar
+     */
     public void initToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -72,6 +86,9 @@ public class DetailNotesActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Method ini digunakan untuk membuat membuat component berdasarkan layout
+     */
     public void initComponent(){
         mIvDetailNotes = findViewById(R.id.ivDetailNotes);
         mTvDetailNotesTitle = findViewById(R.id.tvDetailNotesTitle);
@@ -103,6 +120,9 @@ public class DetailNotesActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Method ini digunakan untuk menampilkan dialog Hapus Diary
+     */
     private void showDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Are you sure want delete this diary?");

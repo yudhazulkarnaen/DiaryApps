@@ -16,6 +16,9 @@ import motion.diaryapps.R;
 import motion.diaryapps.create_notes.CreateNotesActivity;
 import motion.diaryapps.utils.Tools;
 
+/**
+ * Activity Untuk Menampilkan List Notes yang ada
+ */
 public class ListNotesActivity extends AppCompatActivity {
 
     private List<ListNotesModel> mLists = new ArrayList<>();
@@ -23,6 +26,10 @@ public class ListNotesActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
+    /**
+     * Method ini digunakan untuk menjalankan aksi ketika activity dibuat
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,13 +42,19 @@ public class ListNotesActivity extends AppCompatActivity {
         // TODO: 4/12/19 panggil initDummy() disini
     }
 
-    public void initToolbar(){
+    /**
+     * method ini digunakan untuk membuat toolbar
+     */
+    public void initToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Diary Apps");
     }
 
-    public void initRecyclerView(){
+    /**
+     * Method ini digunakan untuk membuat recyclerview.
+     */
+    public void initRecyclerView() {
         // TODO: 4/12/19 -> ganti null dengan component RecyclerView pada activity_list_notes
         // hint: gunakan findViewById(R.id.xxxxx);
         mRecyclerView = null;
@@ -57,7 +70,10 @@ public class ListNotesActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
     }
 
-    public void initDummy(){
+    /**
+     * Method ini digunakan untuk membuat data dummy pada list
+     */
+    public void initDummy() {
         // TODO: 4/12/19 -> lengkapi parameter untuk ListNotesModel disini
         // hint: lakukan setelah menambahkan constructor pada ListNotesModel
         // untuk date gunakan Tools.getCurrentDateISO8601()
@@ -68,17 +84,33 @@ public class ListNotesActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Method ini digunakan untuk menambahkan options menu dengan men-inflate
+     * layout menu pada {@code R.menu.menu_list_notes} ke {@code menu}
+     *
+     * @param menu menu bawaan pada toolbar
+     * @return true - mengganti menu bawaan
+     */
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_list_notes,menu);
+        getMenuInflater().inflate(R.menu.menu_list_notes, menu);
         return true;
     }
 
+    /**
+     * method ini digunakan untuk mengatur ketika item pada menu di klik
+     *
+     * @param item MenuItem Bawaan
+     * @return jika item yang di klik merupakan menuAdd maka panggil
+     * method {@code startActivity(context)} pada class {@link CreateNotesActivity}
+     *
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if(id == R.id.menuAdd){
+        if (id == R.id.menuAdd) {
             CreateNotesActivity.startActivity(this);
             return true;
         }

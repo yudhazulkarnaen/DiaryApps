@@ -50,6 +50,9 @@ public class CreateNotesActivity extends AppCompatActivity {
         changeState(type);
     }
 
+    /**
+     * Method ini digunakan untuk inisialisasi Objek
+     */
     public void initComponent() {
         mTvToolbarTitle = findViewById(R.id.tvCreateNotesCover);
         mEtCreateNotesTitle = findViewById(R.id.etCreateNotesTitle);
@@ -60,6 +63,10 @@ public class CreateNotesActivity extends AppCompatActivity {
         mBtnCreateNotes = findViewById(R.id.btnCreateNotes);
     }
 
+    /**
+     * method ini digunakan untuk mengganti tipe layout menjadi Edit atau Add
+     * @param type Type jenis layout
+     */
     public void changeState(int type) {
         switch (type) {
             case TYPE_EDIT:
@@ -76,6 +83,9 @@ public class CreateNotesActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Method ini digunakan untuk membuat toolbar
+     */
     public void initToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -89,12 +99,20 @@ public class CreateNotesActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Method ini digunakan untuk memasukkan data ke component
+     * @param data data hasil {@link DiaryDao} yang akan ditampilkan
+     */
     public void initData(DiaryDao data) {
         mEtCreateNotesTitle.setText(data.getTitle());
         mEtCreateNotesDescription.setText(data.getDescription());
         Tools.setImage(mIvCreateNotesEdit, data.getUrl_cover());
     }
 
+    /**
+     * Method ini digunakan untuk mengatur aksi yang ada di aktivitas
+     * @param type tipe layout ( Edit / Create )
+     */
     public void initListener(final int type) {
         mBtnCreateNotes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,12 +126,21 @@ public class CreateNotesActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Method ini digunakan untuk melakukan perpindahan aktivitas
+     * @param context Context dari Activity Sebelumnya
+     */
     public static void startActivity(Context context) {
         Intent intent = new Intent(context, CreateNotesActivity.class);
         intent.putExtra(KEY_TYPE, TYPE_ADD);
         context.startActivity(intent);
     }
 
+    /**
+     * Method ini digunakan untuk melakukan perpindahan aktivitas dengan mengirim data
+     * @param context Context dari Activity sebelumnya
+     * @param data data uang akan dikirim
+     */
     public static void startActivity(Context context, DiaryDao data) {
         Intent intent = new Intent(context, CreateNotesActivity.class);
         intent.putExtra(KEY_TYPE, TYPE_EDIT);

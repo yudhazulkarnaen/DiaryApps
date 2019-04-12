@@ -18,6 +18,9 @@ import motion.diaryapps.R;
 import motion.diaryapps.detail_notes.DetailNotesActivity;
 import motion.diaryapps.utils.Tools;
 
+/**
+ * Class ini digunakan sebagai Adapter dari recycler view
+ */
 public class ListNotesAdapter extends RecyclerView.Adapter<ListNotesAdapter.ViewHolder> {
 
     private List<ListNotesModel> mLists = new ArrayList<>();
@@ -25,6 +28,12 @@ public class ListNotesAdapter extends RecyclerView.Adapter<ListNotesAdapter.View
     // TODO: 4/12/19 -> Tambahkan Constructor disini
     // hint: gunakan alt+insert
 
+    /**
+     * Method ini digunakan untuk membuat ViewHolder dari item yang akan diulang
+     * @param viewGroup parent view
+     * @param i position
+     * @return ViewHolder
+     */
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -39,6 +48,12 @@ public class ListNotesAdapter extends RecyclerView.Adapter<ListNotesAdapter.View
         return viewHolder;
     }
 
+    /**
+     * Method ini digunakan untuk memasang data pada viewHolder,
+     * method ini juga dipanggil setiap kali menggunakan {@code Adapter.notifyDataSetChanged()}
+     * @param viewHolder view dari item
+     * @param i position item
+     */
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         final int position = i;
@@ -61,6 +76,10 @@ public class ListNotesAdapter extends RecyclerView.Adapter<ListNotesAdapter.View
         Tools.setImage(viewHolder.ivItemListNotes,mLists.get(position).getImage_url());
     }
 
+    /**
+     * method ini digunakan untuk menampilkan jumlah item yang akan tampil
+     * @return list size
+     */
     @Override
     public int getItemCount() {
         // TODO: 4/12/19 -> ganti return menjadi panjang list
@@ -68,6 +87,11 @@ public class ListNotesAdapter extends RecyclerView.Adapter<ListNotesAdapter.View
         return 0;
     }
 
+    /**
+     * Class ini digunakan sebagai Holder dari item view.
+     * Class ini dapat di isi dengan attribute dan method yang akan digunakan.
+     * Class ini dipanggil hanya di panggil 1x melalui onCreateViewHolder
+     */
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         CardView cvItemListNotes;

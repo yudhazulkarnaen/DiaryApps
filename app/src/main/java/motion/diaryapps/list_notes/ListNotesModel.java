@@ -2,6 +2,9 @@ package motion.diaryapps.list_notes;
 
 import java.io.Serializable;
 
+/**
+ * Class ini digunakan untuk sebagai Model data pada layout item
+ */
 public class ListNotesModel {
 
     private String id;
