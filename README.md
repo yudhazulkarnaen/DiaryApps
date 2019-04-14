@@ -46,4 +46,5 @@ Ikutilah perintah TODO pada class berikut :
 
 * [RecyclerView](https://medium.com/easyread/tutorial-android-recyclerview-dan-cardview-9a62aaa6cc0c) - Tutorial Android RecyclerView dan CardView - *by. Dimas Maulana* 
 * [Figma](https://bit.ly/2CS2gUl) - MockUp DiaryApps 
+* [Materi SG 2](https://github.com/masdafaprimaaji/SGMosen2) - Materi SG 2 - *by. Daffa Prima Aji*
 
