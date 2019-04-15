@@ -42,6 +42,11 @@ Ikutilah perintah TODO pada class berikut :
 2. ListNotesAdapter 
 3. ListNotesActivity 
 
+## Notes
+1. Untuk url image dapat mencari gambar dari google, copy link nya dengan awalan https:// dan diakhiri dengan .jpg atau .png
+( ex : https://t-ec.bstatic.com/images/hotel/max1024x768/136/136201154.jpg )
+
+
 ## Reference
 
 * [RecyclerView](https://medium.com/easyread/tutorial-android-recyclerview-dan-cardview-9a62aaa6cc0c) - Tutorial Android RecyclerView dan CardView - *by. Dimas Maulana* 
