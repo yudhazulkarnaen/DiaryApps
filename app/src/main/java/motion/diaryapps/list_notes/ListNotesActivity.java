@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,8 +39,9 @@ public class ListNotesActivity extends AppCompatActivity {
         initToolbar();
 
         // TODO: 4/12/19 panggil initRecyclerView() disini
-
+        initRecyclerView();
         // TODO: 4/12/19 panggil initDummy() disini
+        initDummy();
     }
 
     /**
@@ -57,13 +59,13 @@ public class ListNotesActivity extends AppCompatActivity {
     public void initRecyclerView() {
         // TODO: 4/12/19 -> ganti null dengan component RecyclerView pada activity_list_notes
         // hint: gunakan findViewById(R.id.xxxxx);
-        mRecyclerView = null;
+        mRecyclerView = findViewById(R.id.rvListNotes);
 
         // TODO: 4/12/19 -> ganti null dengan objek ListNotesAdapter
-        mAdapter = null;
+        mAdapter = new ListNotesAdapter(mLists,this);
 
         // TODO: 4/12/19 -> ganti null dengan objek LinearLayoutManager
-        mLayoutManager = null;
+        mLayoutManager = new LinearLayoutManager(this, LinearLayout.VERTICAL,false);
 
 
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -77,8 +79,10 @@ public class ListNotesActivity extends AppCompatActivity {
         // TODO: 4/12/19 -> lengkapi parameter untuk ListNotesModel disini
         // hint: lakukan setelah menambahkan constructor pada ListNotesModel
         // untuk date gunakan Tools.getCurrentDateISO8601()
-
-        mLists.add(new ListNotesModel());
+        mLists.add(new ListNotesModel("1","https://ik.imagekit.io/hj8sm3kk7/medium/gallery/exterior/14/1995/honda-brio-front-angle-low-view-753743.jpg","Mobil","1 Februari 2017"));
+        mLists.add(new ListNotesModel("2","https://cdn.moladin.com/motor/yamaha/Yamaha_Aerox_155_2061_77787_thumbnail.jpg","Motor","1 Januari 2017"));
+        mLists.add(new ListNotesModel("3","https://www.torro-shop.de/media/image/product/4343/lg/1-16-rc-panzer-iv-g-ir-camouflage.jpg","Tank","1 Maret 2017"));
+        mLists.add(new ListNotesModel("4","https://media.guideku.com/thumbs/2018/08/08/92141-ilustrasi-pesawat/745x489-img-92141-ilustrasi-pesawat.jpg","Pesawat","1 Mei 2017"));
 
         mAdapter.notifyDataSetChanged();
     }
